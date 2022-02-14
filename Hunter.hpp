@@ -1,18 +1,19 @@
 /*
+** EPITECH PROJECT, 2022
 ** Hunter_2022
 ** File description:
-** Settings
+** Hunter
 */
 
-#ifndef SETTINGS_HPP_
-#define SETTINGS_HPP_
+#ifndef HUNTER_HPP_
+#define HUNTER_HPP_
 
 #include "IScreen.hpp"
 
-class Settings : public IScreen {
+class Hunter : public IScreen {
     public:
-        Settings();
-        ~Settings();
+        Hunter();
+        ~Hunter();
         void display(sf::RenderWindow &window);
         Screen gameplay(sf::Event event, sf::RenderWindow &window);
 
@@ -20,4 +21,4 @@ class Settings : public IScreen {
     private:
 };
 
-#endif /* !SETTINGS_HPP_ */
+#endif /* !HUNTER_HPP_ */

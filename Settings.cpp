@@ -16,14 +16,14 @@ Settings::~Settings()
 
 void Settings::display(sf::RenderWindow &window)
 {
-
+    window.clear();
 }
 
-Screen Settings::gameplay(sf::Event event)
+Screen Settings::gameplay(sf::Event event, sf::RenderWindow &window)
 {
     if (event.type == sf::Event::KeyPressed) {
         if (event.key.code == sf::Keyboard::Escape) {
-            std::cout << "changement de screen" << std::endl;
+            std::cout << "Passage en menu" << std::endl;
             return (Screen::MENU);
         }
     }

@@ -6,25 +6,30 @@
 ##
 
 SRC	=	main.cpp		\
-		Game.cpp
+		Game.cpp		\
+		Menu.cpp		\
+		Settings.cpp	\
+		Data.cpp
 
 NAME	=	hunter
 
-FLAGS	=	-W -Wall -Werror -Wextra 
+FLAGS	=	-W -Wall -Werror -Wextra
+
+LIBS 	=	-lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 
 all:	$(NAME) 
 
 $(NAME):
-		g++ -o $(NAME) $(SRC) -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
+		g++ -o $(NAME) $(SRC) $(LIBS)
 
 valgrind:
-		g++ -o $(NAME) $(SRC) -g3
+		g++ -o $(NAME) $(SRC) $(LIBS) -g3
 
 warning:
-		g++ -o $(NAME) $(SRC) $(FLAGS) -g3
+		g++ -o $(NAME) $(SRC) $(FLAGS) $(LIBS) -g3
 
 optimize:
-		g++ -o $(NAME) $(SRC) -O4
+		g++ -o $(NAME) $(SRC) $(LIBS) -O4
 
 clean:
 		rm -f $(NAME)
@@ -35,3 +40,5 @@ fclean:
 		rm -f *#
 
 re:		fclean all
+
+reval:	fclean valgrind

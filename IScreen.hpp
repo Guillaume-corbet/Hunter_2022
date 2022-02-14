@@ -13,13 +13,13 @@
 #define HEIGHT 1080
 #define NAME "Hunter"
 
-enum Screen {MENU, PAUSE, GAME, SETTINGS, HIGHSCORE};
+enum Screen {MENU, PAUSE, HUNTER, SETTINGS, HIGHSCORE, QUIT};
 
 class IScreen {
     public:
         virtual ~IScreen() = default;
         virtual void display(sf::RenderWindow &window) = 0;
-        virtual Screen gameplay(sf::Event event) = 0;
+        virtual Screen gameplay(sf::Event event, sf::RenderWindow &window) = 0;
 
     protected:
     private:

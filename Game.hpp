@@ -9,12 +9,14 @@
 
 #include "IScreen.hpp"
 #include "Menu.hpp"
+#include "Settings.hpp"
 
 class Game {
     public:
         Game();
         ~Game();
         void run();
+        void changeScreen(Screen newScreen);
 
     protected:
     private:
